@@ -1,0 +1,33 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:700);
+
+body {
+    margin-top: 20px;
+}
+
+.wrapper {
+    background-color: #fff;
+    padding: 15px;
+    box-shadow: 0 0 20px #999;
+}
+
+.slide {
+    width: 100%;
+    min-height: 800px;
+    display: inline-block;
+}
+
+.oulu-overlay,
+.hcmc-overlay {
+    width: 800px;
+    background-color: rgba(255, 255, 255, .8);
+    padding: 25px;
+    text-align: center;
+    font-family: 'Roboto Slab', serif;
+    font-size: 4em;
+    font-weight: 700;
+    color: #AD3743;
+}
+
+.hcmc-overlay {
+    width: 500px;
+}
