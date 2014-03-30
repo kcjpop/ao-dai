@@ -17,7 +17,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .slide {
     width: 100%;
-    min-height: 800px;
+    height: 800px;
     display: inline-block;
 }
 
@@ -37,11 +37,12 @@ h1, h2, h3, h4, h5, h6 {
     width: 500px;
 }
 
-.img-food {
+.img-framed {
     background-color: #fff;
-    padding: 5px;
+    padding: 10px;
     box-shadow: 0 0 20px #999;
     margin-bottom: 10px;
+    width: 360px;
 }
 
 .img-food.first {
@@ -50,4 +51,21 @@ h1, h2, h3, h4, h5, h6 {
 
 .hide {
     display: none;
+}
+
+.xtra {
+    font-size: 6em;
+}
+
+.slide-text h1 {
+    font-size: 6em;
+    margin-bottom: 100px; 
+}
+
+.slide-text h1.first {
+    margin-top: 50px;
+}
+
+.ao-dai {
+    margin-top: 70px;
 }
