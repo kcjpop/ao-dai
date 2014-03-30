@@ -150,6 +150,9 @@ var slide05 = {
     run: function() {
         var _this = this;
         this.el.removeClass('hide').addClass('animated wobble');
+        $('audio').animate({volume: 0}, 6000, null, function() {
+            $(this).remove();
+        });
     }
 };
 
