@@ -38,13 +38,34 @@ var slide01 = {
             // Remove it
             ouluOverlay.setMap(null);
 
-            map.drawRoute({
-                origin: [65.0126143, 25.4714526],
-                destination: [15.206343, 107.672707],
-                strokeColor: '#000',
+            var lineSymbol = {
+                path: 'M 0,-1 0,1',
                 strokeOpacity: 1,
-                strokeWeight: 6
+                scale: 4
+            };
+
+            var line = map.drawPolyline({
+                path: [
+                    [65.0126143, 25.4714526],
+                    [15.206343, 107.672707]
+                ],
+                strokeColor: '#000',
+                strokeOpacity: 0,
+                strokeWeight: 6,
+                icons: [{
+                    icon: lineSymbol,
+                    offset: '0',
+                    repeat: '20px'
+                }]
             });
+
+            var count = 0;
+            window.dash = setInterval(function() {
+                count = (count + 1) % 200;
+                var icons = line.get('icons');
+                icons[0].offset = (count / 2) + '%';
+                line.set('icons', icons);
+            }, 100);
 
             // Stop bouncing
             marker.setAnimation(null);
@@ -56,6 +77,8 @@ var slide01 = {
                 title: 'Vietnam',
                 animation: google.maps.Animation.BOUNCE
             });
+
+            // Somewhere in Kazakhstan :D
             map.panTo(new google.maps.LatLng(48.881543, 69.049378));
 
             var vietnamOverlay = map.drawOverlay({
@@ -161,21 +184,22 @@ $(function() {
 
     setTimeout(function() {
         slide01.hide();
+        clearInterval(window.dash);
         slide02.run();
-    }, 11000);
+    }, 13000);
 
     setTimeout(function() {
         slide02.hide();
         slide03.run();
-    }, 22000);
+    }, 24000);
     
     setTimeout(function() {
         slide03.hide();
         slide04.run();
-    }, 27000);
+    }, 29000);
 
     setTimeout(function() {
         slide04.hide();
         slide05.run();
-    }, 34000);
+    }, 36000);
 });
