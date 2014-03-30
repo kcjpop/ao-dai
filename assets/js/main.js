@@ -17,19 +17,21 @@ $(function() {
     var ouluOverlay = map.drawOverlay({
         lat: 65.0126143,
         lng: 25.4714526,
-        content: '<div class="oulu-overlay animated slideInDown">You are here. Should we start the awesomeness?</div>',
+        content: '<div class="oulu-overlay animated slideInDown">We are here, in Oulu, Finland</div>',
         horizontalAlign: 'center',
         verticalAlign: 'bottom'
     });
 
-    var swingMe = setInterval(function() {
+    setTimeout(function() {
         $('div.oulu-overlay').removeClass('slideInDown swing').addClass('swing');
     }, 2000);
 
-    $('#btn-start').on('click', function() {
-        clearInterval(swingMe);
+    // setTimeout(function() {
+    //     $('#btn-start').click();
+    // }, 5000);
 
-        var hcmc = new google.maps.LatLng(10.768451, 106.6943626);
+    $('#btn-start').on('click', function() {
+        var hcmc = new google.maps.LatLng(15.206343, 107.672707);
         
         // Remove it
         ouluOverlay.setMap(null);
@@ -42,9 +44,9 @@ $(function() {
         }, 500);
 
         var hcmcOverlay = map.drawOverlay({
-            lat: 10.768451,
-            lng: 106.6943626,
-            content: '<div class="hcmc-overlay animated tada">Tervetuoa Vietnamiin.</div>',
+            lat: 15.206343,
+            lng: 108.672707,
+            content: '<div class="hcmc-overlay animated tada">This is Vietnam.</div>',
             horizontalAlign: 'center',
             verticalAlign: 'bottom'
         });

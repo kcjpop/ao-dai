@@ -4,6 +4,11 @@ body {
     margin-top: 20px;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto Slab', serif;
+    color: #AD3743;
+}
+
 .wrapper {
     background-color: #fff;
     padding: 15px;
@@ -30,4 +35,19 @@ body {
 
 .hcmc-overlay {
     width: 500px;
+}
+
+.img-food {
+    background-color: #fff;
+    padding: 5px;
+    box-shadow: 0 0 20px #999;
+    margin-bottom: 10px;
+}
+
+.img-food.first {
+    margin-top: 40px;
+}
+
+.hide {
+    display: none;
 }
