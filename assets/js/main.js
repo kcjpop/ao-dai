@@ -38,12 +38,25 @@ var slide01 = {
             // Remove it
             ouluOverlay.setMap(null);
 
-            marker.setPosition(hcmc);
-            marker.setAnimation(google.maps.Animation.DROP);
+            map.drawRoute({
+                origin: [65.0126143, 25.4714526],
+                destination: [15.206343, 107.672707],
+                strokeColor: '#000',
+                strokeOpacity: 1,
+                strokeWeight: 6
+            });
 
-            setTimeout(function() {
-                marker.setAnimation(google.maps.Animation.BOUNCE);
-            }, 500);
+            // Stop bouncing
+            marker.setAnimation(null);
+
+            map.setZoom(3);
+            map.addMarker({
+                lat: 15.206343,
+                lng: 107.672707,
+                title: 'Vietnam',
+                animation: google.maps.Animation.BOUNCE
+            });
+            map.panTo(new google.maps.LatLng(48.881543, 69.049378));
 
             var vietnamOverlay = map.drawOverlay({
                 lat: 15.206343,
@@ -53,7 +66,10 @@ var slide01 = {
                 verticalAlign: 'bottom'
             });
 
-            map.panTo(hcmc);
+            setTimeout(function() {
+                map.setZoom(6);
+                map.panTo(hcmc);
+            }, 3000);
         }, 5000);
     }
 };
@@ -77,12 +93,12 @@ var slide02 = {
                 var _col = $('#col-landscape');
                 _col.removeClass('hide').addClass('animated bounceIn');
                 _col.find('img').addClass('animated swing');
-            }, 2000);
+            }, 3000);
 
             setTimeout(function() {
                 var _col = $('#col-people');
                 _col.removeClass('hide').addClass('animated tada');
-            }, 3000);
+            }, 6000);
         }, 2000);
     }
 };
@@ -102,7 +118,7 @@ var slide03 = {
 
         setTimeout(function() {
             _this.el.find('h1:eq(2)').removeClass('hide').addClass('animated fadeInRight');
-        }, 4000);
+        }, 3500);
     }
 };
 
@@ -126,6 +142,16 @@ var slide04 = {
     }
 };
 
+var slide05 = {
+    el: $('#slide05'),
+    hide: function() {
+        this.el.addClass('hide');
+    },
+    run: function() {
+        var _this = this;
+        this.el.removeClass('hide').addClass('animated wobble');
+    }
+};
 
 $(function() {
     slide01.run();
@@ -133,15 +159,20 @@ $(function() {
     setTimeout(function() {
         slide01.hide();
         slide02.run();
-    }, 8000);
+    }, 11000);
 
     setTimeout(function() {
         slide02.hide();
         slide03.run();
-    }, 15000);
+    }, 22000);
     
     setTimeout(function() {
         slide03.hide();
         slide04.run();
-    }, 20000);
+    }, 27000);
+
+    setTimeout(function() {
+        slide04.hide();
+        slide05.run();
+    }, 34000);
 });
