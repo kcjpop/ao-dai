@@ -92,7 +92,7 @@ var slide01 = {
             setTimeout(function() {
                 map.setZoom(6);
                 map.panTo(hcmc);
-            }, 3000);
+            }, 5000);
         }, 5000);
     }
 };
@@ -111,18 +111,18 @@ var slide02 = {
             _this.el.children('h1').fadeOut(function() {
                 $('#col-food').removeClass('hide').addClass('animated bounceIn');
             });
-
-            setTimeout(function() {
-                var _col = $('#col-landscape');
-                _col.removeClass('hide').addClass('animated bounceIn');
-                _col.find('img').addClass('animated swing');
-            }, 3000);
-
-            setTimeout(function() {
-                var _col = $('#col-people');
-                _col.removeClass('hide').addClass('animated tada');
-            }, 6000);
         }, 2000);
+
+        setTimeout(function() {
+            var _col = $('#col-landscape');
+            _col.removeClass('hide').addClass('animated bounceIn');
+            _col.find('img').addClass('animated swing');
+        }, 5500);
+
+        setTimeout(function() {
+            var _col = $('#col-people');
+            _col.removeClass('hide').addClass('animated tada');
+        }, 9000);
     }
 };
 
@@ -191,15 +191,15 @@ $(function() {
     setTimeout(function() {
         slide02.hide();
         slide03.run();
-    }, 24000);
+    }, 29000);
     
     setTimeout(function() {
         slide03.hide();
         slide04.run();
-    }, 29000);
+    }, 35000);
 
     setTimeout(function() {
         slide04.hide();
         slide05.run();
-    }, 36000);
+    }, 42000);
 });
